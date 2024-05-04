@@ -1,0 +1,38 @@
+.checkboxListContainer {
+  width: 186px;
+  background-color: white;
+  margin-top: 8px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -2px 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+ul {
+  position: absolute;
+  width: 186px;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  display: 'flex';
+  align-items: 'center';
+  height: 49;
+  padding: '8px';
+  list-style: 'none'
+}
+
+label {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 14px;
+}
+
+input[type="checkbox"] {
+  margin-left: 8px;
+}
+
+li.selected {
+  background-color: rgba(239, 238, 241, 1);
+}
