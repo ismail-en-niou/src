@@ -22,7 +22,14 @@ export default function CheckboxList({ data = [] }) {
         return (
           <li
             key={value}
-            className={isSelected ? 'selected' : 'li'}
+            className={isSelected ? 'selected' : ''}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 49,
+              padding: '8px',
+              listStyle: 'none'
+            }}
             onClick={handleToggle(value)}
           >
             <input
@@ -30,8 +37,14 @@ export default function CheckboxList({ data = [] }) {
               id={labelId}
               checked={isSelected}
               onChange={() => {}}
+              className="customCheckbox"
             />
-            <label htmlFor={labelId}>{`${value}`}</label>
+            <h3
+            onClick={handleToggle(value)} 
+            htmlFor={labelId}
+            >
+              {`${value}`}
+            </h3>
           </li>
         );
       })}
