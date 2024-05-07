@@ -1,16 +1,17 @@
 .header {
-    width: 100%;
+    width: 65%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 4px;
   }
   
   .modal-container {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   

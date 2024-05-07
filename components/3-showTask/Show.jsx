@@ -1,19 +1,64 @@
 import React from 'react'
-import './Show.css';
+import './Show.css'
+import TaskCard from './subComponentes/TaskCard'
 
 
 export default function Show() {
-  return (
-    <div className="container">
-  <div className="row">
-    <div className="item">Div 1</div>
-    <div className="item">Div 2</div>
-    <div className="item">Div 3</div>
-  </div>
-  <div className="column">
-    <div className="text">Text 1</div>
-    <div className="text">Text 2</div>
-  </div>
-</div>
+  const mockData = [
+    {
+      "Team": "Front End",
+      "Status": "Waiting",
+      "Time": 65,
+      "TimeValue": "18h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    },
+    {
+      "Team": "Back End",
+      "Status": "Time Expired",
+      "Time": 40,
+      "TimeValue": "8h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    },
+    {
+      "Team": "UX/UI",
+      "Status": "Started",
+      "Time": 35,
+      "TimeValue": "48h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    },
+    {
+      "Team": "Front End",
+      "Status": "Not Started",
+      "Time": 100,
+      "TimeValue": "68h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    },
+    {
+      "Team": "Back End",
+      "Status": "Started",
+      "Time": 45,
+      "TimeValue": "28h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    },
+    {
+      "Team": "UX/UI",
+      "Status": "Waiting",
+      "Time": 85,
+      "TimeValue": "13h",
+      "taskName": "Error: Photoshop Update Not Compatible with New OS",
+      "taskDescription": "An issue arises with the latest Photoshop update, as it fails to align with the operating system's recent version, resulting in software malfunction or installation failure."
+    }
+  ];
+  return ( 
+    <div className="containerShow" style={{ overflow: 'auto' }}>
+        {mockData.map((data, index) => (
+      <TaskCard key={index} {...data} />
+    ))}
+    </div>
   )
 }

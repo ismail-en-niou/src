@@ -1,0 +1,12 @@
+.containerShow {
+  margin-top: 14px;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 13px;
+}
