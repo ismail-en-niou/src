@@ -4,9 +4,14 @@ import "./login.css";
 
 export default function Login() {
     const navigate = useNavigate();
-    const location = useLocation();
-    const userType = location.pathname.startsWith('/root') ? 'root' : 'user';
-
+    const location = useLocation(); 
+    const userType = location.pathname.startsWith('/root') ? 'root' : 'team';
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if(token){
+          navigate(`/root/home`);
+        }
+    })
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -17,10 +22,10 @@ export default function Login() {
             user: username,
             pass: password
         };
-
+  
         try {
-            const endpoint = userType === 'root' ? '/root/login' : '/team/login';
-            const response = await fetch(`https://apiteam.robixe.online${endpoint}`, {
+            const endpoint = userType === 'root' ? '/root/auth' : '/team/auth';
+            const response = await fetch(`https://teamapi.robixe.online${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,7 +37,6 @@ export default function Login() {
             console.log(data);
             if (data.code === 1) {
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('user', JSON.stringify(data));
                 navigate(`/${userType}/home`);
             } else if (data.code === 0) {
                 const confirmed = window.confirm("The Password Is Incorrect Or Username");

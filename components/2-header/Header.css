@@ -1,11 +1,14 @@
 .header {
     width: 65%;
+    max-width: 320px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-left: 4px;
+    padding-left: 8px;
+    position: relative;
+    z-index: 200;
   }
   
   .modal-container {

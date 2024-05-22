@@ -1,8 +1,17 @@
-import React from 'react';
+import React ,{useEffect}from 'react';
 import ModalComponent from './subComponentes/ModalComponent';
 import './Header.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+export default function Header({setShowTaskFilter}) {
 
-export default function Header() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+    })
+    
+}, []);
+
   const mockData={
     "Time":[
       "Today",
@@ -18,16 +27,17 @@ export default function Header() {
     "Status":[
       "Started",
       "Not Started",
-      "Wating",
+      "Waiting",
       "Time Expired",
     ],
   }
+
   return (
     <div className="header">
-      <div className="modal-container">
-        <ModalComponent name="Time" data={mockData.Time}/>
-        <ModalComponent name="Team" data={mockData.Team}/>
-        <ModalComponent name="Status" data={mockData.Status}/>
+      <div className="modal-container"data-aos="zoom-in" >
+        <ModalComponent name="Time" data={mockData.Time} setShowTaskFilter={setShowTaskFilter}/>
+        <ModalComponent name="Team" data={mockData.Team} setShowTaskFilter={setShowTaskFilter}/>
+        <ModalComponent name="Status" data={mockData.Status} setShowTaskFilter={setShowTaskFilter}/>
       </div>
     </div>
   );

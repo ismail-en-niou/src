@@ -10,7 +10,7 @@ function App() {
         <Route path="/root" element={<Login userType="root" />} />
         <Route path="/root/home" element={<Home1 />} />
         <Route path="/" element={<Login userType="user" />} />
-        <Route path="/user/home" element={<Home2 />} />
+        <Route path="/team/home" element={<Home2 />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,9 @@
+.style{
+    border-radius: 8px;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+    height: 220px;
+    width: 100%;
+    gap :5rem;
+  }

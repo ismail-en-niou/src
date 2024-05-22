@@ -2,15 +2,16 @@
   width: 186px;
   background-color: white;
   margin-top: 8px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -2px 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0px 12.1px 0px #0000000D;
   border-radius: 4px;
+  z-index: 800; 
 }
 
 ul {
   position: absolute;
   width: 186px;
   padding: 0;
-}
+} 
 
 li {
   display: flex;

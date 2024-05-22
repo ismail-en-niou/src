@@ -1,9 +1,38 @@
-import React, { useState , useEffect } from 'react'
-import "./NavInformation.css"
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import "./NavInformation.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function NavInformation() {
-   
+    const [root, setRoot] = useState({});
+    const [project, setProject] = useState({});
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/root");
+    }
+    useEffect(() => {
+        AOS.init({
+          duration: 1500,
+        })   
+      }, []);
+    useEffect(() => {
+        const dataroot = JSON.parse(localStorage.getItem("datauser"));
+        const dataProject = JSON.parse(localStorage.getItem("dataproject"));
+        if (dataroot) setRoot(dataroot);
+        if (dataProject) setProject(dataProject);
+
+        const intervalId = setInterval(checkSession, 1000);
+        return () => clearInterval(intervalId);
+    }, []);
+    const checkSession = () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/root");
+        }
+    }
     return (
-        <div className='nav'>
+        <div className='nav' data-aos="fade-right">
             <div className="logo">
                 <img src="/images/Vector.svg" alt="test" />
                 <div>
@@ -11,14 +40,15 @@ export default function NavInformation() {
                     <p>Team Management System</p>
                 </div>
             </div>
-            <div className='user'>
-                    <span className='icon-user'></span>
-                    <h3>Ismail enniou</h3>
-            </div>
+           
             <div className="info">
+                <div className='user'>
+                    <span><img src="/images/employee-man-alt(1) 1.svg" alt="" srcset="" /></span>
+                    <p>{root.first} {root.last}</p>
+                </div>
                 <div>
-                    <span className='icon-group'></span>
-                    <h3>Backend</h3>
+                    <span><img src="/images/users(1) 1.svg" alt="" srcset="" /></span>
+                    <h3>{root.role}</h3>
                 </div>
                 <div className="divider"></div>
                 <div>
@@ -28,27 +58,28 @@ export default function NavInformation() {
                 <div className="divider"></div>
                 <div>
                     <span className='icon-business'></span>
-                    <h3>RTMS</h3>
+                    <h3>{project.name}</h3>
                 </div>
                 <div className="divider"></div>
                 <div>
-                    <span className='icon-piechart'></span>
-                    <h3>50%</h3>
+                    <span><img src="/images/house-building(1) 1.svg" alt="" srcset="" /></span>
+                    <h3>{root.decisions}</h3>
                 </div>
                 <div className="divider"></div>
                 <div>
                     <span className='icon-currency-dollar'></span>
-                    <h3>10%</h3>
+                    <h3>{root.money}</h3>
                 </div>
             </div>
             <div className="divider"></div>
             <div className="btns">
-                <a href="https://discord.gg/tcVV3CWP"  target='block'>
-                <button ><span className='icon-discord'></span> Discord Link</button>
+                <a href="https://discord.gg/tcVV3CWP" target='_blank' rel="noopener noreferrer">
+                    <button><span className='icon-discord1'></span> Discord Link</button>
                 </a>
-                <button type="button" className='btn'> <span className='icon-switch'></span>Log Out</button>
+                <button type="button" className='btn' onClick={handleLogout}>
+                    <span className='icon-log-out'></span> Log Out
+                </button>
             </div>
         </div>
-
-    )
+    );
 }

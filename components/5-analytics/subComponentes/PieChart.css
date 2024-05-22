@@ -1,0 +1,75 @@
+.PieChart {
+  width: 394px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  box-shadow: 4px 0px 12.1px 0px #0000000D;
+}
+
+.chartContainer {
+  width: 55%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.chartContainer h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.legendContainer {
+  margin-top: 10%;
+  height: 54%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.legendItem div {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.backend{
+  background-color: #D16BA5;
+}
+
+.frontend{
+  background-color: #5FFBF1;
+}
+
+.uiux{
+  background-color: #86A8E7;
+}
+
+.legendItem  .nameItem {
+  margin-left: 15px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.percentage{
+  font-size: 14px;
+  font-weight: 400;
+  color:#0568A6
+}

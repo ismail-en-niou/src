@@ -30,9 +30,10 @@
     color: #a1a1a1;
 }
 .nav .info{
-    margin-top: 1rem;
+    margin-top: 7rem;
     background-color: #323232;
     padding: .9rem 3.48rem;
+    width: 80%;
     border-radius:  0  0 21px 21px;
     color: #fff;
     display: flex;
@@ -40,52 +41,66 @@
     align-items: start;
     justify-content: left;
     gap: .4rem;
+    position: relative;
 }
+.nav div.user p {
+    position: relative;
+    left: -1rem;
+    display: inline-block;
+    min-width: 150px; 
+    font-size: 16px;
+    text-align: center; 
+}
+.nav div.user img{
+    width: 19px;
+}
+
 .nav .info div{
     display: flex;
     position: relative;
     width: 100%;
     left: -1.3rem;
-    gap: 1rem;
+    gap: 2.4rem;
     align-items: center;
     justify-content: left;
 }
+.nav .info div span{
+    margin-left: -1.3rem;
+}
 .nav .info div h3{
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
 }
-.nav  div.user{
-    background-color: #404040;
-    padding: .7rem 0;
-    width: 77%;
-    border-radius:  21px 21px 0 0;
-    color:#fff ;
-    display: flex;
-    gap: .3rem;
-    font-size: 16px;
-    position: relative;
-    top: 3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-}
-.nav  div.user h3{
-    font-weight: 600;
-}
+
 
 .nav div .divider{
     text-align: center;
     border-bottom: 1px solid #5E5C5C;
-    margin:0 0 0 2rem; 
-    width:87%;
+    margin:0 0 0 0rem; 
+    width:120%;
 }
 .nav  .divider{
     text-align: center;
     border-bottom: 2px solid #bbbbbb;
     margin-top: 11rem;
     width:70%;
+}
+.nav  div.user{
+    background-color: #404040;
+    padding: .3rem 3rem;
+    border-radius:  21px 21px 0 0;
+    color:#fff ;
+    font-size: 18px;
+    position: absolute;
+    top: -2rem;
+    left: 0rem;
+    display: flex;
+    gap: 3rem;
+    font-weight: 400;
+}
+
+.nav  div.user p ,.nav  div.user span {
+    margin-left: -2rem; 
 }
 .nav .btns{
     display: flex;
